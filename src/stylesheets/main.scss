@@ -1,0 +1,16 @@
+@use 'reset';
+
+$bg-color: #ddd;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $bg-color;
+}
+
+h1 {
+  font-size: 3rem;
+  text-align: center;
+}
