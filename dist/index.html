@@ -7,7 +7,18 @@
   <title>Merry Weather</title>
 </head>
 <body>
-  <h1>Find weather anywhere!</h1>
+  <div class="wrapper">
+    <h1>Find weather anywhere!</h1>
+    <div>
+      <form action="" method="get" id="get-weather">
+        <label for="location">
+          Type in a location: <input type="text" id="location" name="location" placeholder="Chicago,IL,USA">
+        </label>
+        <button type="submit">Get Weather</button>
+      </form>
+      <p id="weather-data"></p>
+    </div>
+  </div>
 
   <script src="main.js"></script>
 </body>

@@ -13,4 +13,25 @@ body {
 h1 {
   font-size: 3rem;
   text-align: center;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.wrapper,
+#weather-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#weather-data {
+  margin-top: 3rem;
+  padding: 2rem;
+  border: 1px solid gray;
+
+  min-height: 10rem;
+}
+
+.info {
+  margin-bottom: 1rem;
 }
