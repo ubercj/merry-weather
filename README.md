@@ -1,6 +1,6 @@
 # Merry Weather
 
-Search for current weather data by city, state, and country. See the finished product [here]().
+Search for current weather data by city, state, and country. See the finished product [here](https://ubercj.github.io/merry-weather/).
 
 This is from The Odin Project's full-stack web development curriculum - read more [here](https://www.theodinproject.com/paths/full-stack-ruby-on-rails/courses/javascript/lessons/weather-app).
 
