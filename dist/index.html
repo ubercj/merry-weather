@@ -9,14 +9,36 @@
 <body>
   <div class="wrapper">
     <h1>Find weather anywhere!</h1>
-    <div>
+    <div class="col">
       <form action="" method="get" id="get-weather">
-        <label for="location">
-          Type in a location: <input type="text" id="location" name="location" placeholder="Chicago,IL,USA">
-        </label>
+        <div class="text-inputs">
+          <label for="city">
+            <p>Enter a city:</p> <input type="text" id="city" name="city" required="true">
+          </label>
+          <label for="state">
+            Enter a state: <input type="text" id="state" name="state" placeholder="Two letter code, e.g. 'NY'">
+          </label>
+          <label for="country">
+            Enter a country: <input type="text" id="country" name="country">
+          </label>
+        </div>
+        <div class="units">
+          <p>Units:</p>
+          <div class="radio-buttons">
+            <label for="units">
+              Imperial: <input type="radio" name="units" id="units" value="imperial" checked>
+            </label>
+            <label for="units">
+              Metric: <input type="radio" name="units" id="units" value="metric">
+            </label>
+          </div>
+        </div>
         <button type="submit">Get Weather</button>
       </form>
-      <p id="weather-data"></p>
+      <div class="data-container">
+        <div id="weather-data"></div>
+        <img id="weather-image" src="" alt="" height="300" width="300">
+      </div>
     </div>
   </div>
 
