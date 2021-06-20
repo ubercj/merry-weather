@@ -1,3 +1,20 @@
+const getWeatherGIF = (term) => {
+  switch (term) {
+    case 'Clouds':
+      return 'https://media.giphy.com/media/lOkbL3MJnEtHi/giphy.gif';
+    case 'Clear':
+      return 'https://media.giphy.com/media/uqpK3SuxEY4W9YQvdg/giphy.gif';
+    case 'Haze':
+      return 'https://media.giphy.com/media/LmC5rpntvJPxe/giphy.gif';
+    case 'Rain':
+      return 'https://media.giphy.com/media/Mgq7EMQUrhcvC/giphy.gif';
+    case 'Drizzle':
+      return 'https://media.giphy.com/media/xT9GEOg09OuResnZ6g/giphy.gif';
+    default:
+      return 'https://i.ytimg.com/vi/r4sdwdtCiXQ/maxresdefault.jpg';
+  }
+}
+
 const fetchGIF = async (term) => {
   try {
     const response = await fetch(
@@ -12,4 +29,4 @@ const fetchGIF = async (term) => {
   }
 }
 
-export { fetchGIF };
+export { fetchGIF, getWeatherGIF };

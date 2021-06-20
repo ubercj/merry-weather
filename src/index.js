@@ -1,10 +1,11 @@
 import './stylesheets/main.scss';
-import { fetchGIF } from './fetchGIF';
+import { getWeatherGIF } from './fetchGIF';
 import { getWeather } from './getWeather';
 import { addName, addDescription, addTemp, addWind } from './addInfo';
 
-const infoContainer = document.getElementById("weather-data");
-const weatherImage = document.getElementById("weather-image");
+const wrapper = document.querySelector(".wrapper");
+const infoContainer = document.querySelector(".data-container");
+const weatherInfo = document.getElementById("weather-data");
 const weatherForm = document.getElementById("get-weather");
 const cityInput = document.getElementById("city");
 const stateInput = document.getElementById("state");
@@ -17,7 +18,7 @@ weatherForm.addEventListener("submit", (e) => {
   let country = e.target.elements.country.value;
   let units = e.target.elements.units.value;
 
-  clearInfo(infoContainer);
+  clearInfo(weatherInfo);
   clearForm();
 
   handleSubmit(city, units, state, country);
@@ -28,15 +29,18 @@ const handleSubmit = async (city, units, state, country) => {
   fillInfo(weatherData, units);
 
   let gifTerm = weatherData.param;
-  let gifURL = await fetchGIF(gifTerm);
-  weatherImage.src = gifURL;
+  let gifURL = getWeatherGIF(gifTerm);
+  wrapper.style.background = `url(${gifURL})`;
+  wrapper.style.backgroundSize = "cover";
 }
 
 const fillInfo = (data, units) => {
-  infoContainer.appendChild(addName(data.name));
-  infoContainer.appendChild(addDescription(data.description));
-  infoContainer.appendChild(addTemp(data.temp, units));
-  infoContainer.appendChild(addWind(data.wind, units));
+  weatherInfo.appendChild(addName(data.name));
+  weatherInfo.appendChild(addDescription(data.description));
+  weatherInfo.appendChild(addTemp(data.temp, units));
+  weatherInfo.appendChild(addWind(data.wind, units));
+
+  infoContainer.classList.remove('hidden');
 }
 
 const clearInfo = (element) => {
