@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Merry Weather</title>
+  <script src="https://kit.fontawesome.com/8398ae8baf.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="col">
+      <h1>Look up current weather:</h1>
+      <form action="" method="get" id="get-weather">
+        <div class="text-inputs">
+          <label for="city">
+            <p>Enter a city:</p> <input type="text" id="city" name="city" required="true">
+          </label>
+          <label for="state">
+            Enter a state: <input type="text" id="state" name="state" placeholder="Two letter code, e.g. 'NY' (Optional)">
+          </label>
+          <label for="country">
+            Enter a country: <input type="text" id="country" name="country" placeholder="(Optional)">
+          </label>
+        </div>
+        <div class="units">
+          <p>Units:</p>
+          <div class="radio-buttons">
+            <label for="units">
+              Imperial: <input type="radio" name="units" id="units" value="imperial" checked>
+            </label>
+            <label for="units">
+              Metric: <input type="radio" name="units" id="units" value="metric">
+            </label>
+          </div>
+        </div>
+        <button type="submit">Get Weather</button>
+      </form>
+      <div class="data-container hidden">
+        <div id="weather-data"></div>
+      </div>
+      <a href="https://github.com/ubercj" id="gh-link"><i class="fab fa-github fa-3x"></i></a>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
