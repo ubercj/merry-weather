@@ -13,7 +13,6 @@ const getWeather = async (city, units, state, country) => {
   try {
     const response = await fetch(url, {mode: 'cors'});
     const data = await response.json();
-    console.log(data.weather[0].main);
     return {
       name: data.name,
       param: data.weather[0].main,

@@ -26,9 +26,9 @@ const addTemp = (data, units) => {
 const addWind = (data, units) => {
   const windEl = document.createElement("p");
   if (units === 'imperial') {
-    windEl.textContent = `${data} mph`
+    windEl.textContent = `Wind: ${data} mph`
   } else {
-  windEl.textContent = `${data} m/s`;
+  windEl.textContent = `Wind: ${data} m/s`;
   }
   windEl.classList.add("info");
   return windEl;
