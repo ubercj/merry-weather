@@ -59,17 +59,21 @@ button:hover {
   background-color: rgba(221, 221, 221, 0.507);
 }
 
-.radio-buttons {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
+/********************* Form **********************/
 
 #get-weather {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+}
+
+.radio-buttons {
+  display: flex;
+  
+  label {
+    margin-left: 15px;
+  }
 }
 
 .text-inputs {
@@ -88,6 +92,7 @@ button:hover {
     }
     input {
       width: 70%;
+      padding: 5px;
     }
   }
 }
@@ -102,6 +107,8 @@ input[type="radio"]:hover {
   justify-content: space-between;
   margin-bottom: 10px;
 }
+
+/********************* Data Response **********************/
 
 .data-container {
   display: flex;
@@ -132,4 +139,47 @@ input[type="radio"]:hover {
 
 #gh-link:visited {
   color: inherit;
+}
+
+/********************* Mobile Layout **********************/
+
+@media screen and (max-width: 768px) {
+  .col,
+  .text-inputs,
+  .units,
+  .data-container,
+  button,
+  label,
+  input {
+    width: 100%!important;
+  }
+
+  .col {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  label {
+    flex-direction: column;
+  }
+
+  input {
+    margin-top: 8px;
+  }
+
+  .units {
+    flex-direction: column;
+    p {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    label {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  .radio-buttons {
+    flex-direction: row;
+  }
 }
