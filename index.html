@@ -11,14 +11,17 @@
   <div class="wrapper">
     <div class="col">
       <h1>Look up current weather:</h1>
-      <form action="" method="get" id="get-weather">
+      <form action="" method="get" id="get-weather" novalidate>
         <div class="text-inputs">
+          <span class="error city-error" aria-live="polite"></span>
           <label for="city">
-            Enter a city: <input type="text" id="city" name="city" required="true">
+            Enter a city:<abbr title="This field is required" aria-label="required">*</abbr><input type="text" id="city" name="city" required="true">
           </label>
+          <span class="error state-error" aria-live="polite"></span>
           <label for="state">
-            Enter a state: <input type="text" id="state" name="state" placeholder="Two letter code, e.g. 'NY' (Optional)">
+            Enter a state: <input type="text" id="state" name="state" placeholder="(Optional)" pattern="[A-Za-z][A-Za-z]">
           </label>
+          <span class="error country-error" aria-live="polite"></span>
           <label for="country">
             Enter a country: <input type="text" id="country" name="country" placeholder="(Optional)">
           </label>
