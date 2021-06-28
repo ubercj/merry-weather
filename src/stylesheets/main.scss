@@ -108,6 +108,23 @@ input[type="radio"]:hover {
   margin-bottom: 10px;
 }
 
+/********************* Form Validation **********************/
+
+input:invalid {
+  border: 2px solid red;
+}
+
+.error {
+  align-self: flex-end;
+  width: 70%;
+  background-color: rgb(245, 86, 86);
+  font-size: .8rem;
+
+  &.active {
+    padding: 5px;
+  }
+}
+
 /********************* Data Response **********************/
 
 .data-container {

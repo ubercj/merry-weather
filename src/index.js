@@ -2,27 +2,39 @@ import './stylesheets/main.scss';
 import { getWeatherGIF } from './fetchGIF';
 import { getWeather } from './getWeather';
 import { addName, addDescription, addTemp, addWind } from './addInfo';
+import { cityField, stateField, countryField, inputs, validateInput } from './formValidations';
 
 const wrapper = document.querySelector(".wrapper");
 const infoContainer = document.querySelector(".data-container");
 const weatherInfo = document.getElementById("weather-data");
 const weatherForm = document.getElementById("get-weather");
-const cityInput = document.getElementById("city");
-const stateInput = document.getElementById("state");
-const countryInput = document.getElementById("country");
 
 weatherForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  let city = e.target.elements.city.value;
-  let state = e.target.elements.state.value;
-  let country = e.target.elements.country.value;
-  let units = e.target.elements.units.value;
+  if (!cityField.validity.valid || !stateField.validity.valid || !countryField.validity.valid) {
+    inputs.forEach((el) => validateInput(el));
+  } else {
+    let city = e.target.elements.city.value;
+    let state = e.target.elements.state.value;
+    let country = getCountryValue(e.target.elements.country.value, state);
+    let units = e.target.elements.units.value;
 
-  clearInfo(weatherInfo);
-  clearForm();
+    clearInfo(weatherInfo);
+    clearForm();
 
-  handleSubmit(city, units, state, country);
+    handleSubmit(city, units, state, country);
+  }
 })
+
+const getCountryValue = (target, state) => {
+  if (target) {
+    return target;
+  } else if (state) {
+    return "USA";
+  } else {
+    return "";
+  }
+}
 
 const handleSubmit = async (city, units, state, country) => {
   let weatherData = await getWeather(city, units, state, country);
@@ -50,7 +62,7 @@ const clearInfo = (element) => {
 }
 
 const clearForm = () => {
-  cityInput.value = '';
-  stateInput.value = '';
-  countryInput.value = '';
+  cityField.value = '';
+  stateField.value = '';
+  countryField.value = '';
 }
